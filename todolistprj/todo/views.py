@@ -30,9 +30,13 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     # this will show all the fields that we have created in models.py
-    fields = "__all__"
+    fields = ['title', 'description','complete']
     # after creating new task, user will be brought to new page
     success_url = reverse_lazy('task')
+
+    def form_invalid(self, form):
+        form.instance.user = self.request.user 
+        return super(TaskCreate, self).form_valid(form)
 
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
