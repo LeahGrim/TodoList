@@ -2,12 +2,13 @@
 
 {% block content %}
 {% if request.user.is_authenticated%}
-<p> {{request.user}}</p>
+<p> <b> Logged in as:</b> <u> {{request.user}}</p></u>
 <a href="{% url 'logout' %}"> Logout</a> 
 {% else %}
     <a href=""> Login </a>
 {% endif %}
 <hr></hr>
+<body>
 <h1> My Todo List: </h1>
 <form action="" method="get"> 
     <input type="text" name="search-area">
@@ -35,5 +36,6 @@
     <td> <a href="{% url 'task-create' %}"> Add New Task: </a></td>
     {% endfor %}
 </table>
+</body>
 
 {% endblock content %}
