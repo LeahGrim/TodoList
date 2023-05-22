@@ -1,4 +1,9 @@
+{% if request.user.is_authenticated%}
 <p> {{request.user}}</p>
+<a href=""> Logout</a> 
+{% else %}
+    <a href=""> Login </a>
+{% endif %}
 <hr></hr>
 <h1> My todo List: </h1>
 <table> 
