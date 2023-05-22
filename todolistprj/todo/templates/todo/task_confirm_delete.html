@@ -1,0 +1,7 @@
+
+<form action="" method="post"> 
+<!-- whenever you are using post method, you need csrf token -->
+    {% csrf_token %}
+
+    <p> Are you certain you want to delete task - {{task}}</p>
+</form>
