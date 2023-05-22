@@ -14,6 +14,13 @@ class TaskList(LoginRequiredMixin, ListView):
     # rename context object name to use task in the html in the for loop
     context_object_name = 'task' 
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # filter the list of tasks for each user individually
+        context['task'] = context['task'].filter(user=self.request.user)
+        # check for complete and incomplete tasks, incomplete tasks to be loaded at the top
+        context['count'] = context['task'].filter(complete= False).count()
+        return context
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task 
     context_object_name = 'task'
