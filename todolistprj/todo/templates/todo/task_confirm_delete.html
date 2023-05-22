@@ -1,4 +1,4 @@
-
+{% block content %}
 <form action="" method="post"> 
 <!-- whenever you are using post method, you need csrf token -->
     {% csrf_token %}
@@ -7,3 +7,4 @@
     <input type="submit" value="Yes, Delete"> 
 </form>
 <a href="{% url 'task' %}"> </a>
+{% endblock content %}
