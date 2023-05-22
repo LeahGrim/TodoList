@@ -2,6 +2,7 @@
 <table> 
     <tr>
         <th>Items:</th>
+        <td> <a href="{% url 'task-create' %}"> Add Task: </a></td>
     </tr>
 <!-- way to write python code in django -->
     {% for tasks in task %} 
@@ -10,8 +11,8 @@
             {{tasks.title}}
         </td>
         <td> <a href="{% url 'tasks-detail' tasks.id %}"> View: </a></td>
-        <td> <a href="{% url 'task-create' %}"> Add Task: </a></td>
         <td> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></td>
+        <td> <a href="{% url 'tasks-delete' tasks.id %}"> Delete </a></td>
     </tr>
     <!-- when the user has nothing in the list -->
     {% empty %}
