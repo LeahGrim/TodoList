@@ -9,6 +9,7 @@
         <td>
             {{tasks.title}}
         </td>
+        <td> <a href="{% url 'tasks-detail' tasks.id %}"> </a></td>
     </tr>
     <!-- when the user has nothing in the list -->
     {% empty %}
