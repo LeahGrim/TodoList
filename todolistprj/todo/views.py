@@ -27,7 +27,7 @@ class TaskList(LoginRequiredMixin, ListView):
         # logic that receives a string from the search input on task_list.html and filters tasks by user inputs  
         search_input = self.request.GET.get('search-area') or ''
         if search_input:
-            context['task'] =context['task'].filter(title__startswith = search_input)
+            context['task'] =context['task'].filter(title__icontains = search_input)
             context['search_input'] = search_input
 
         return context
