@@ -19,5 +19,5 @@ class Task(models.Model):
         return self.title
 
     Class Meta:
-        # completed tasks will be ordered down
+        # completed tasks will be displayed at the bottom of the list
         ordering = ['complete'] 
