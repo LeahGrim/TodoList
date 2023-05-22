@@ -14,3 +14,10 @@ class Task(models.Model):
     complete = models.BooleanField(default=False)
     #when a new task is created, the date and time will automatically be assigned to the task
     created = models.DateTimeField(auto_now_add=True)
+
+    def__str__(self):
+        return self.title
+
+    Class Meta:
+        # completed tasks will be ordered down
+        ordering = ['complete'] 
