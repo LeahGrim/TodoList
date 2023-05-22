@@ -10,10 +10,13 @@
             {{tasks.title}}
         </td>
         <td> <a href="{% url 'tasks-detail' tasks.id %}"> View: </a></td>
+        <td> <a href="{% url 'task-create' %}"> Add Task: </a></td>
+        <td> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></td>
     </tr>
     <!-- when the user has nothing in the list -->
     {% empty %}
     <h3> No items found in your list </h3>
+    <h2> adding this line to resolve git conflicts</h2>
     <a href="" > Add New Item </a>
     {% endfor %}
 </table>
