@@ -1,1 +1,18 @@
 <h1> My todo List: </h1>
+<table> 
+    <tr>
+        <th>Items:</th>
+    </tr>
+<!-- way to write python code in django -->
+    {% for task in object_list %} 
+    <tr> 
+        <td>
+            {{task.title}}
+        </td>
+    </tr>
+    <!-- when the user has nothing in the list -->
+    {% empty %}
+    <h3> No items found in your list </h3>
+    <a href="" > Add New Item </a>
+    {% endfor %}
+</table>
