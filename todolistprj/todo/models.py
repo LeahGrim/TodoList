@@ -15,9 +15,9 @@ class Task(models.Model):
     #when a new task is created, the date and time will automatically be assigned to the task
     created = models.DateTimeField(auto_now_add=True)
 
-    def__str__(self):
+    def __str__(self):
         return self.title
 
-    Class Meta:
+    class Meta:
         # completed tasks will be displayed at the bottom of the list
         ordering = ['complete'] 
