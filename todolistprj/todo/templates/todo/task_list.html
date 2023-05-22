@@ -24,6 +24,6 @@
     <!-- when the user has nothing in the list -->
     {% empty %}
     <h3> No items found in your list </h3>
-    <a href="" > Add New Item </a>
+    <td> <a href="{% url 'task-create' %}"> Add New Task: </a></td>
     {% endfor %}
 </table>
