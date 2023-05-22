@@ -1,1 +1,21 @@
+{% extends 'todo/main.html'%}
+{% block content %}
+<body>
 <h1> Task: {{ task }} </h1>
+
+<table>
+
+<tr> 
+    <td> <b> Date Assigned: </b> {{task.created}}</td>
+      
+</tr>
+<tr>
+    <td> <b> Task Description: </b>{{task.description}}</td>
+</tr>
+<tr>
+    <td> Completed? {{task.complete}}</td>
+</tr>
+
+</table>
+</body>
+{% endblock content %}

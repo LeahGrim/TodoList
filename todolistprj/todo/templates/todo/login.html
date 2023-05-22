@@ -1,3 +1,4 @@
+{% block content %}
 <h1> Login:</h1>
 <form action="" method="post"> 
     {% csrf_token %}
@@ -7,3 +8,5 @@
     <p> Not Yet a Registered Todo Lister? </p>
     <a href="{% url 'register' %}"> Register Here  </a>
 </form>
+
+{% endblock content %}

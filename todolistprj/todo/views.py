@@ -36,7 +36,6 @@ class TaskDetail(LoginRequiredMixin, DetailView):
     context_object_name = 'task'
     template_name = 'todo/task.html'
 
-
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     # this will show all the fields that we have created in models.py
