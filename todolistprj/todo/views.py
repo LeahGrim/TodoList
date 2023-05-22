@@ -34,7 +34,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
     # after creating new task, user will be brought to new page
     success_url = reverse_lazy('task')
 
-    def form_invalid(self, form):
+    def form_valid(self, form):
         form.instance.user = self.request.user 
         return super(TaskCreate, self).form_valid(form)
 
