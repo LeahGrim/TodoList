@@ -9,7 +9,10 @@
 {% endif %}
 <hr></hr>
 <body>
-<h1> My Todo List: </h1>
+<div class="todo-header"> 
+<a href="{% url 'task-create' %}"> <h3> Add Task: </h3> </a>
+<h2 class="header-title"> My Todo List: </h2>
+</div>
 <!-- <form action="" method="get"> 
     <input type="text" name="search-area">
     <input type="submit" name="Search Task"> 
@@ -18,55 +21,46 @@
 <!-- create a div to handle user completion of tasks -->
 <!-- without this logic, user completion of tasks is not persistent 
         once the user logs out and re-logs in -->
-<div class="task-items-wrapper">
-    {% for tasks in task %}
-    <div class="task-wrapper">
-        <!-- If the task is completed, then mark the checkbox at the task -->
-        {% if task.complete %} 
-        <div class="task-title">
-            <div class="task-complete-icon">
-                <i> <input type="checkbox"> <a href="{% url 'task-update' %}"> {{tasks}} </a> </i>
-            </div>
-        </div>
-        <a class="delete-link" href="{% url 'task-delete' task.id %}"> X </a>
-        {% else %}
-        <div class="task-title">
-            <div class="task-incomplete-icon">
-                <i> <input type="checkbox"> <a href="{% url 'task-update' %}"> {{tasks}} </a> </i>
-            </div>
-            <a class="delete-link" href="{% url 'task-delete' task.id %}"> X </a>
-        {% endif %}
-        </div>
-    </div>    
-       <!-- when the user has nothing in the list -->
-       {% empty %}
-       <h3> No items found in your list </h3>
-       <td> <a href="{% url 'task-create' %}"> Add New Task: </a></td>
-       {% endfor %}
-</div>
 
-<table> 
-    <tr>
-        <th>Items:</th>
-        <td> <a href="{% url 'task-create' %}"> Add Task: </a></td>
-    </tr>
-<!-- way to write python code in django -->
-    {% for tasks in task %} 
-    <tr> 
-        <td>
-            {{tasks.title}}
-        </td>
-        <td> {{task.description}}</td>
-        <td> <a href="{% url 'tasks-detail' tasks.id %}"> View: </a></td>
-        <td> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></td>
-        <td> <a href="{% url 'tasks-delete' tasks.id %}"> Delete </a></td>
-    </tr>
-    <!-- when the user has nothing in the list -->
-    {% empty %}
-    <h3> No items found in your list </h3>
-    <td> <a href="{% url 'task-create' %}"> Add New Task: </a></td>
-    {% endfor %}
-</table>
+        <div class="card-bdy">
+          
+            <div class="task-items-wrapper">
+                {% for tasks in task %}
+                <div class="task-wrapper">
+                    {% if tasks.complete %}
+                    <div class="task-title">
+                        <div class="task-complete-icon"></div>
+                        <i><s><a href="{% url 'tasks-update' tasks.id%}">{{ tasks }} : </a></s></i>
+                       
+                        <div class="todo-buttons"> <tr> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></tr> </div>
+                        <div class="todo-buttons">  <tr> <a class="delete-link" href="{% url 'tasks-delete' tasks.id %}"> Delete</a> </tr></div>
+                    </div>
+ 
+
+            
+                    {% else %}
+                    <div class="task-title">
+                        <div class="task-incomplete-icon"></div>
+                        <a href="{% url 'tasks-update' tasks.id%}">{{ tasks }}    : </a>
+                       
+                        <div class="todo-buttons"> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></div>
+                        <div class="todo-buttons">  <a class="delete-link" href="{% url 'tasks-delete' tasks.id %}">Delete</a> </div>
+                        </div>
+                    </div>
+                  
+                  
+                    {% endif %}
+                    
+                </div>
+                {% empty %}
+                <h3>No items in list</h3>
+                <a href="{% url 'task-create' %}">Add New Item</a>
+                {% endfor %}
+            
+            </div>
+            
+            </div>
+
 </body>
 
 {% endblock content %}

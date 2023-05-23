@@ -13,7 +13,6 @@
             background: linear-gradient(90deg, #ff00bfd1 0%, #c6ff6932 43%, #0099ff9d 100%);
             font-family: 'HKGrotesk';
             padding-top: 50px;
-            padding-left: 50px;
         }
         .container {
             max-width: 550px;
@@ -22,6 +21,28 @@
             background-color: #fff;
             box-shadow: 5px 5px 20px 5px rgba(159, 5, 105, 0.877);
             text-align: left;
+        }
+        .todo-header{
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin: 0;
+            flex-flow: column-reverse wrap; 
+        }
+        .header-title{
+            
+            margin: 0;
+            font-weight: bold;
+        }
+        .task-title{
+            display: flex;
+            /* justify-content: space-evenly; */
+            column-gap: 15%;
+        }
+        .todo-buttons{
+           display: flex;
+           justify-content: space-around;
+           order: 1;
         }
     </style>
     <body> 
