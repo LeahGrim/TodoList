@@ -40,7 +40,7 @@ Open terminal in vscode and run bulleted points as terminal commands
 - Register Page: 
 ![Screenshot 2023-05-23 at 11 18 15 AM](https://github.com/LeahGrim/TodoList/assets/88753277/9b295efc-00e2-4738-8e2a-7c4ff407dc5f)
 -Todolist Landing Page:
-![Screenshot 2023-05-23 at 11 42 52 AM](https://github.com/LeahGrim/TodoList/assets/88753277/b95e94a5-78de-411d-af5e-3b8d5ec5ecc8)
+![Screenshot 2023-05-23 at 2 58 47 PM](https://github.com/LeahGrim/TodoList/assets/88753277/457eb462-dfc4-46fc-a37d-76b59140567c)
 -Todolist Create Todo Item:
 ![Screenshot 2023-05-23 at 11 20 17 AM](https://github.com/LeahGrim/TodoList/assets/88753277/c8e36dfd-994d-4aa9-9d3e-fb6e70973d7d)
 -TodoList View TodoList:
