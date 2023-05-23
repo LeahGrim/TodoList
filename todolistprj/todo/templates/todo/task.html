@@ -14,11 +14,15 @@
 </tr>
 <tr>
     <td> 
-        {% if tasks.complete %}
-       <h2 class="completion-message"> Congrats! You have marked this task as completed!!! </h2>
+        {% if task.complete %}
+        <div>
+            <h2 class="completion-message"> Congrats! You have marked this task as completed!!! </h2>
+        </div>
        {% else %}
-       <h2 class="completion-message"> You are on track to complete this Task, you got this! </h2>
-       <h4 class="completion-message-2"> Mark as completed by going to edit view and marking as completed</h4>
+       <div>
+            <h2 class="completion-message"> You are on track to complete this Task, you got this! </h2>
+            <h4 class="completion-message-2"> Mark as completed by going to edit view and marking as completed</h4>
+        </div>
        {% endif %}
     </td>
 </tr>
