@@ -4,7 +4,8 @@
 <!-- whenever you are using post method, you need csrf token -->
     {% csrf_token %}
 
-    <p> Are you certain you want to delete task - {{task}}</p>
+    <p> Are you certain you want to delete <b> {{task}}  </b></p>
+    <p> You entered the following description <b> {{task.description}}</b></p>
     <input type="submit" value="Yes, Delete"> 
 </form>
 <a href="{% url 'task' %}"> </a>
