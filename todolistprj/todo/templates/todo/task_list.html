@@ -10,10 +10,41 @@
 <hr></hr>
 <body>
 <h1> My Todo List: </h1>
-<form action="" method="get"> 
+<!-- <form action="" method="get"> 
     <input type="text" name="search-area">
     <input type="submit" name="Search Task"> 
-</form>
+</form> -->
+
+<!-- create a div to handle user completion of tasks -->
+<!-- without this logic, user completion of tasks is not persistent 
+        once the user logs out and re-logs in -->
+<div class="task-items-wrapper">
+    {% for tasks in task %}
+    <div class="task-wrapper">
+        <!-- If the task is completed, then mark the checkbox at the task -->
+        {% if task.complete %} 
+        <div class="task-title">
+            <div class="task-complete-icon">
+                <i> <input type="checkbox"> <a href="{% url 'task-update' %}"> {{tasks}} </a> </i>
+            </div>
+        </div>
+        <a class="delete-link" href="{% url 'task-delete' task.id %}"> X </a>
+        {% else %}
+        <div class="task-title">
+            <div class="task-incomplete-icon">
+                <i> <input type="checkbox"> <a href="{% url 'task-update' %}"> {{tasks}} </a> </i>
+            </div>
+            <a class="delete-link" href="{% url 'task-delete' task.id %}"> X </a>
+        {% endif %}
+        </div>
+    </div>    
+       <!-- when the user has nothing in the list -->
+       {% empty %}
+       <h3> No items found in your list </h3>
+       <td> <a href="{% url 'task-create' %}"> Add New Task: </a></td>
+       {% endfor %}
+</div>
+
 <table> 
     <tr>
         <th>Items:</th>
