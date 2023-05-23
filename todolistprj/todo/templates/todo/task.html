@@ -13,7 +13,13 @@
     <td> <b> Task Description: </b>{{task.description}}</td>
 </tr>
 <tr>
-    <td> Completed? {{task.complete}}</td>
+    <td> 
+        {% if tasks.complete %}
+       <h2 class="completion-message"> Congrats! You have marked this task as completed!!! </h2>
+       {% else %}
+       <h2 class="completion-message"> You are on track to complete this Task, you got this! </h2>
+       {% endif %}
+    </td>
 </tr>
 
 </table>
