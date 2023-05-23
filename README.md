@@ -8,14 +8,14 @@ In order to successfully run this application, follow these instructions careful
 Open terminal in vscode and run bulleted points as terminal commands 
 - (1) create directory for todo app - mkdir Todolist - cd TodoList
 
-- (2) install virtual environments - python3
-       -m venv
+- (2) install virtual environments
+-       python3 -m venv
 
 - (3) activate virtual environment (on mac os) 
--     - source venv/bin/activate
+-      source venv/bin/activate
 
 - (4) install django 
--     - pip3 install django
+-     pip3 install django
 
 - (5) create django admin app 
 -       django-admin startproject todolistprj 
