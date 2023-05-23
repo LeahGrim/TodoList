@@ -6,7 +6,9 @@ In order to successfully run this application, follow these instructions careful
 
 ## Step By Step App Setup:
 Open terminal in vscode and run bulleted points as terminal commands 
-- (1) create directory for todo app - mkdir Todolist - cd TodoList
+- (1) create directory for todo app 
+-       mkdir Todolist 
+-       cd TodoList
 
 - (2) install virtual environments
 -       python3 -m venv
