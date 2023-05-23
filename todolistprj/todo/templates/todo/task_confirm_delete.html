@@ -6,7 +6,10 @@
 
     <p> Are you certain you want to delete <b> {{task}}  </b></p>
     <p> You entered the following description <b> {{task.description}}</b></p>
+    <div class="delete-page-buttons"> 
     <input type="submit" value="Yes, Delete"> 
+    <a href="{% url 'task' %}"> Return to List </a>
+   </div>
 </form>
 <a href="{% url 'task' %}"> </a>
 {% endblock content %}
