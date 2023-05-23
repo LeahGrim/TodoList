@@ -51,7 +51,8 @@ Open terminal in vscode and run bulleted points as terminal commands
 -TodoList Completed Item List Display: 
 ![Screenshot 2023-05-23 at 12 11 24 PM](https://github.com/LeahGrim/TodoList/assets/88753277/ee859dd9-2a1e-45be-a5f3-1b60c8843766)
 -TodoList Delete Page: 
-![Screenshot 2023-05-23 at 12 13 31 PM](https://github.com/LeahGrim/TodoList/assets/88753277/b7a2de98-f028-4f30-963f-240b67da5d45)
+![Screenshot 2023-05-23 at 1 17 15 PM](https://github.com/LeahGrim/TodoList/assets/88753277/4d850ec8-0cbb-451b-9167-d301f44b527b)
+
 
 
 
