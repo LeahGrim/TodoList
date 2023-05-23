@@ -8,7 +8,7 @@
     <a href=""> Login </a>
 {% endif %}
 <hr></hr>
-<body>
+
 <div class="todo-header"> 
 <a href="{% url 'task-create' %}"> <h3> Add Task: </h3> </a>
 <h2 class="header-title"> My Todo List: </h2>
@@ -21,46 +21,43 @@
 <!-- create a div to handle user completion of tasks -->
 <!-- without this logic, user completion of tasks is not persistent 
         once the user logs out and re-logs in -->
-
-        <div class="card-bdy">
+      
+        <div class="card-body">
           
             <div class="task-items-wrapper">
                 {% for tasks in task %}
                 <div class="task-wrapper">
                     {% if tasks.complete %}
-                    <div class="task-title">
+                    
+                        <div class="task-title">
                         <div class="task-complete-icon"></div>
                         <i><s><a href="{% url 'tasks-update' tasks.id%}">{{ tasks }} : </a></s></i>
                        
                         <div class="todo-buttons"> <tr> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></tr> </div>
                         <div class="todo-buttons">  <tr> <a class="delete-link" href="{% url 'tasks-delete' tasks.id %}"> Delete</a> </tr></div>
-                    </div>
+                        </div>
  
 
             
                     {% else %}
+                 
                     <div class="task-title">
                         <div class="task-incomplete-icon"></div>
-                        <a href="{% url 'tasks-update' tasks.id%}">{{ tasks }}    : </a>
+                        <a href="{% url 'tasks-update' tasks.id%}">{{ tasks }} : </a>
                        
                         <div class="todo-buttons"> <a href="{% url 'tasks-update' tasks.id %}"> Edit: </a></div>
                         <div class="todo-buttons">  <a class="delete-link" href="{% url 'tasks-delete' tasks.id %}">Delete</a> </div>
                         </div>
-                    </div>
-                  
-                  
-                    {% endif %}
-                    
+                        {% endif %}
                 </div>
+
+                
                 {% empty %}
                 <h3>No items in list</h3>
                 <a href="{% url 'task-create' %}">Add New Item</a>
                 {% endfor %}
-            
             </div>
+        </div>
             
-            </div>
-
-</body>
-
+    
 {% endblock content %}
